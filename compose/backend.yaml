@@ -56,6 +56,8 @@ services:
       - "traefik.http.middlewares.backend-cors.headers.accessControlAllowHeaders=DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-csrf-token"
       - "traefik.http.routers.backend.middlewares=backend-cors"
       - "traefik.http.services.backend.loadbalancer.server.port=4000"
+    ports:
+      - "4000:4000"
     logging:
       driver: "json-file"
       options:
